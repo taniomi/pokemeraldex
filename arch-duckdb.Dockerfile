@@ -7,6 +7,7 @@ RUN pacman -Syu --noconfirm \
     && unzip duckdb_cli-linux-amd64.zip \
     && mv duckdb /usr/local/bin/ \
     && rm duckdb_cli-linux-amd64.zip \
+    # clean unused cached packages
     && pacman -Sc --noconfirm
 
 # Set default command to DuckDB
