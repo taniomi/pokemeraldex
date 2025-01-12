@@ -1,0 +1,23 @@
+services:
+  app:
+    image: uvpy
+    container_name: uvpy
+    networks:
+      - pokemeraldex-net
+    ports:
+      - "8000:8000"
+    
+  db:
+    image: arch-duckdb
+    container_name: db
+    networks:
+      - pokemeraldex-net
+    volumes:
+      - db:/var/lib/duckdb
+
+networks:
+  pokemeraldex-net:
+    driver: bridge
+
+volumes:
+  db:

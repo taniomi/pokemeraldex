@@ -11,4 +11,4 @@ RUN pacman -Syu --noconfirm \
     && pacman -Sc --noconfirm
 
 # Set default command to DuckDB
-CMD ["duckdb"]
+CMD ["duckdb", "pokemeraldex.db"]
